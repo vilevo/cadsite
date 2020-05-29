@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('a-propos', function () {
+    return view('apropos');
+});
+Route::get('contact', function () {
+    return view('contact');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
+    Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
 });

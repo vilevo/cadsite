@@ -17,6 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('telephone')->default('+228 000000');;
+            $table->string('pays')->default('Togo');;
+            $table->string('adresse')->default('Lome, Togo');;
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
