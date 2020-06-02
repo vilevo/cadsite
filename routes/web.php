@@ -22,7 +22,7 @@ Route::get('a-propos', function () {
 Route::get('contact', function () {
     return view('contact');
 });
-Route::get('projets', function () {
+Route::get('acheter-des-actions/projets', function () {
     $projets = App\Projet::all();
     return view('projets')->with('projets', $projets);
 })->name('investir.projets');
