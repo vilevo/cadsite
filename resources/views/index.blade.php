@@ -73,7 +73,7 @@
     <div class="jumbotron top-space">
         <img src="{{ asset('cad_assets/images/2781070.svg') }}" alt="image" width="100" height="100">
         <h4>Devenez libre financierement en investissant sur un projet maintenant!</h4>
-        <p class="text-right"><a class="btn btn-primary btn-large">ACHETER DES ACTIONS »</a></p>
+        <p class="text-right"><a class="btn btn-primary btn-large" href="{{route('investir.projets')}}">ACHETER DES ACTIONS »</a></p>
     </div>
 
 </div> <!-- /container -->
