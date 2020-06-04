@@ -26,7 +26,6 @@ class ProjetController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -37,7 +36,20 @@ class ProjetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'titre' => 'bail|required|min:5',
+            'description' => 'required'
+        ]);
+        $projet = new Projet;
+        $projet->titre = $request->titre;
+        $projet->description = $request->description;
+        if ($projet->save()) {
+            $request->session()->flash('success', $projet->titre . ' a bien été crée');
+        } else {
+            $request->session()->flash('error', ' une erreur s\'est produite veuillez réessayer svp! ');
+        }
+
+        return redirect()->route('admin.projets.index');
     }
 
     /**
@@ -59,7 +71,8 @@ class ProjetController extends Controller
      */
     public function edit(Projet $projet)
     {
-        //
+
+        return view('admin.projets.edit')->with('projet', $projet);
     }
 
     /**
@@ -71,7 +84,19 @@ class ProjetController extends Controller
      */
     public function update(Request $request, Projet $projet)
     {
-        //
+        $this->validate($request, [
+            'titre' => 'bail|required|min:5',
+            'description' => 'required'
+        ]);
+        $projet->titre = $request->titre;
+        $projet->description = $request->description;
+        if ($projet->save()) {
+            $request->session()->flash('success', $projet->titre . ' a bien été modifié');
+        } else {
+            $request->session()->flash('error', ' une erreur s\'est produite veuillez réessayer svp! ');
+        }
+
+        return redirect()->route('admin.projets.index');
     }
 
     /**

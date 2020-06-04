@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VisiteurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('acceuil');
 Route::get('a-propos', function () {
     return view('apropos');
 });
@@ -26,6 +27,7 @@ Route::get('acheter-des-actions/projets', function () {
     $projets = App\Projet::all();
     return view('projets')->with('projets', $projets);
 })->name('investir.projets');
+Route::get('details-du-projet/{id}', 'VisiteursController@show_projet')->where('id', '[0-9]+')->name('projet.show');
 
 
 

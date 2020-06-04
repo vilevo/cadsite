@@ -1,5 +1,15 @@
 @extends('layouts.cadsite_layout')
 
+@section('meta')
+<meta name="keywords" content="Entreprendre, investir , investir en afrique, CAD, cad" />
+<meta name="description" content="CAD : entrepreneuriat et gestion de projets." />
+<meta property="og:url" content="https://www.entreprisecad.herokuapp.co" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CAD - Acceuil" />
+<meta property="og:description" content="CAD : entrepreneuriat et gestion de projets." />
+<meta property="og:image" content="{{asset('cad_assets/images/cad.jpeg')}}" />
+@endsection
+
 @section('content')
 <!-- Header -->
 <header id="head">
@@ -7,7 +17,7 @@
         <div class="row">
             <h1 class="lead">INVESTISSEZ ET GAGNER DE L'ARGENT</h1>
             <p class="tagline">CAD: petite description de l'entreprise</p>
-            <p><a class="btn btn-default btn-lg" role="button">PLUS D'INFO</a> <a class="btn btn-action btn-lg" role="button">ACHETER DES ACTIONS</a></p>
+            <p><a class="btn btn-default btn-lg" role="button">PLUS D'INFO</a> <a class="btn btn-action btn-lg" role="button" href="{{route('investir.projets')}}">ACHETER DES ACTIONS</a></p>
         </div>
     </div>
 </header>

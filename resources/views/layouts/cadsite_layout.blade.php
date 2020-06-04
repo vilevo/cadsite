@@ -10,6 +10,9 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>{{ config('app.name', 'cadsite') }}</title>
+<!-- Required meta tags -->
+<link rel="icon" href="{{asset('cad_assets/images/cad.jpeg')}}" />
+@yield('meta')
 
 
 <!-- Fonts -->
@@ -160,6 +163,8 @@
     <script src="{{ asset('cad_assets/js/headroom.min.js') }}"></script>
     <script src="{{ asset('cad_assets/js/jQuery.headroom.min.js') }}"></script>
     <script src="{{ asset('cad_assets/js/template.js') }}"></script>
+    <script src="{{ asset('cad_assets/js/socialShare.js') }}"></script>
+    @yield('js_script')
 </body>
 
 </html>
